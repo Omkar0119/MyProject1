@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MyProject.Models.CloneTamplate1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tamplateid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tamplateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isworking)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tamplateid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tamplateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isworking)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cloneId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cloneId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cloneId })
+        </td>
+    </tr>
+}
+
+</table>
